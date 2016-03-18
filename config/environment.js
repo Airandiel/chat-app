@@ -2,8 +2,11 @@
 
 module.exports = function(environment) {
   var ENV = {
+    //apiHost: 'https://chatair.firebaseio.com/',
     modulePrefix: 'workspace',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    firebase: 'https://chatair.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -18,14 +21,20 @@ module.exports = function(environment) {
       // when it is created
     }
   };
-
   if (environment === 'development') {
+    //ENV.apiHost: 'http://localhost:8080'
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
+  //ENV.contentSecurityPolicy['connect-src'] += ' ' + ENV.apiHost;
+  //adapters/application.js
+  //import DS from 'ember-data';
+  //import ENV from 'portal/config/environment';
+  //export default DS.RESTAdapter.extend({
+    // host: ENV.apiHost
 
   if (environment === 'test') {
     // Testem prefers this...
