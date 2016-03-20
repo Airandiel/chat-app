@@ -16,7 +16,24 @@
   </head>
   <body>
     {{content-for "body"}}
-    
+    <script src="http://builds.emberjs.com/canary/ember-data.js"></script>
+    <script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script>
+    <script src="emberfire.js">
+      var ref = new Firebase("https://chatair.firebaseio.com");
+      ref.authWithPassword({
+        email    : "bobtony@firebase.com",
+        password : "correcthorsebatterystaple"
+      }, function(error, authData) {
+        if (error) {
+          console.log("Login Failed!", error);
+        } else {
+          console.log("Authenticated successfully with payload:", authData);
+        }
+      });
+      </script>
+    <script>
+      
+    </script>
     <script src="assets/vendor.js"></script>
     <script src="assets/workspace.js"></script>
     <script type="text/javascript" src="bower_components/ember-autofocus/dist/ember-autofocus.min.js)"></script>
