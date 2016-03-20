@@ -6,8 +6,9 @@
     <title>Workspace</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{content-for "head"}}
 
+    {{content-for "head"}}
+    
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/workspace.css">
 
@@ -15,10 +16,15 @@
   </head>
   <body>
     {{content-for "body"}}
-
+    
     <script src="assets/vendor.js"></script>
     <script src="assets/workspace.js"></script>
-
+    <script type="text/javascript" src="bower_components/ember-autofocus/dist/ember-autofocus.min.js)"></script>
+    
     {{content-for "body-footer"}}
+    
+    <script>
+      window.location.hash ='#alert alert-warning alert-chat' ;
+    </script>
   </body>
 </html>
